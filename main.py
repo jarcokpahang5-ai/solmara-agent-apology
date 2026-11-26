@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""The one-sentence apology your AI agent owes you.
+"""Print the one-sentence apology the agent owes you.
 
-Pure Python 3 standard library, deterministic, no network.
-Prints exactly one funny one-sentence apology and nothing else.
+The sentence itself is stored in entry_text; this file pulls it
+out of that module by attribute name and prints it on its own.
 """
 
-from entry_text import LINE
+import entry_text
 
-print(LINE)
+_apology = getattr(entry_text, "LINE")
+
+print(_apology)
